@@ -24,7 +24,7 @@ $ conda create -n aiapp_tutorial python=3.8
 - By `requirements.txt`
 
     ```
-    $ pip install -e requirements.txt
+    $ pip install -e requirements/basic.txt
     ```
 
 - By this package
