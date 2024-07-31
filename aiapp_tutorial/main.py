@@ -1,9 +1,11 @@
 # pip install torch==2.2.1 torchvision==0.17.1 --index-url https://download.pytorch.org/whl/cu121
 from .model import load_model
 from .data import read_image
+from .configs import cfg
 
-# TODO from config
-infer_model = load_model('mobilenetv4_conv_small.e2400_r224_in1k')
+#  fname = 'https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/beignets-task-guide.png'
+
+infer_model = load_model(cfg.infer_model_name)
 
 
 def inference(image_path: str, topk: int = 5):
