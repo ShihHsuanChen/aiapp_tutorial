@@ -30,7 +30,7 @@ def cli():
         return
 
     if args.image_path:
-        _inference(args.image_path)
+        _inference(args.image_path, topk=args.topk)
     else:
         print('Require image path or url')
 

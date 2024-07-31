@@ -17,5 +17,5 @@ def inference(image_path: str, topk: int = 5):
     """
     image = read_image(image_path)
     print('start inference')
-    result = infer_model.inference(image)
+    result = infer_model.inference(image, topk=topk)
     return result
