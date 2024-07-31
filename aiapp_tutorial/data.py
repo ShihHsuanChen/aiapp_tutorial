@@ -8,7 +8,5 @@ def read_image(image_path: str):
         # from url
         image = Image.open(urlopen(image_path))
     else:
-        # from local file
-        with open(image_path, 'rb') as fp:
-            image = Image.open(fp)
+        image = Image.open(image_path)
     return image
