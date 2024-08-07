@@ -14,6 +14,7 @@ def cli():
     )
     parser.add_argument(
         '-k', '--topk',
+        default=5,
         type=int,
         help='list predict classes of top-k highest probabilities',
     )
