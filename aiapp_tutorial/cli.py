@@ -1,4 +1,4 @@
-from argparse import ArgumentParser
+from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 
 
 def cli():
@@ -6,6 +6,7 @@ def cli():
     parser = ArgumentParser(
         prog='myaiapp',
         description='Doing image classification using MobileNet',
+        formatter_class=ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
         '-v', '--version',
