@@ -1,7 +1,7 @@
 *.egg*
 *pyc*
 *.png
-model
+models
 dist
 build
 .env

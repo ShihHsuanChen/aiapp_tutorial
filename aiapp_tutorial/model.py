@@ -8,11 +8,11 @@ from imagenet_stubs.imagenet_2012_labels import label_to_name
 
 class InferModel:
     def __init__(self,
-            model_name: str,
+            model_name_or_path: str,
             **kwargs,
             ):
         # load model by timm
-        model = timm.create_model(model_name, pretrained=True)
+        model = timm.create_model(model_name_or_path, pretrained=True)
         self.model = model.eval()
 
         # get model specific transforms (normalization, resize)
