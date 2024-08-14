@@ -50,4 +50,27 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
     $ python main.py [-h] [-v] [-k TOPK] [image_path]
     ```
 
+## Test
+
+1. Install dependencies for testing
+
+    ```
+    $ pip install -e .[test]
+    ```
+
+2. Run test
+
+    - All tests
+
+        ```
+        $ pytest test/
+        ```
+
+    - One file (example: `test/unit/test_data.py`)
+
+        ```
+        $ pytest test/unit/test_data.py
+        ```
+
+
 ## Build
