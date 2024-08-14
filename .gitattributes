@@ -1,0 +1,2 @@
+test/data/mobilenetv4_conv_small.e2400_r224_in1k/*.safetensors filter=lfs diff=lfs merge=lfs -text
+test/data/mobilenetv4_conv_small.e2400_r224_in1k/*.bin filter=lfs diff=lfs merge=lfs -text
