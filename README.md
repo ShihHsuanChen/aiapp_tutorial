@@ -89,9 +89,10 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
 
 ## Build
 
-1. Install dependencies for build
+1. Install dependencies for build using `cmd_config`
 
     ```
+    $ pip install setuptools-git-versioning==1.13.6
     $ pip install -e .[build]
     ```
 
@@ -100,13 +101,13 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
     - Single file
 
         ```
-        $ ./build_single.sh
+        $ config2cmd build-compose.yml -r build_single
         ```
 
     - Bundle
 
         ```
-        $ ./build.sh
+        $ config2cmd build-compose.yml -r build
         ```
     
     The result will be created in `./dist/`
