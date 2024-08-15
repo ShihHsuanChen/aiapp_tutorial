@@ -88,3 +88,25 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
 
 
 ## Build
+
+1. Install dependencies for build
+
+    ```
+    $ pip install -e .[build]
+    ```
+
+2. Build
+
+    - Single file
+
+        ```
+        $ ./build_single.sh
+        ```
+
+    - Bundle
+
+        ```
+        $ ./build.sh
+        ```
+    
+    The result will be created in `./dist/`
