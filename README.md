@@ -58,6 +58,20 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
     $ pip install -e .[test]
     ```
 
+2. Update submodule
+
+    - Only need run once after cloning this repository
+
+        ```
+        $ git submodule init
+        ```
+
+    - Clone and update
+
+        ```
+        $ git pull --recurse-submodules
+        ```
+
 2. Run test
 
     - All tests
