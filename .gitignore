@@ -1,6 +1,7 @@
 *.egg*
 *pyc*
 *.png
+!test/data/*.png
 models
 dist
 build
