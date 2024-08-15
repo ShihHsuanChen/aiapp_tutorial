@@ -44,6 +44,7 @@ setup(
     extras_require={
         'test': get_requirements(['requirements/test.txt']),
         'build': get_requirements(['requirements/build.txt'], envsub=True),
+        'api': get_requirements(['requirements/api.txt'], envsub=True),
     },
     install_requires=get_requirements(['requirements/basic.txt']),
     packages=find_packages(exclude=['test']),

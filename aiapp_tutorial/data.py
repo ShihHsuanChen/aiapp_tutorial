@@ -9,4 +9,4 @@ def read_image(image_path: str):
         image = Image.open(urlopen(image_path))
     else:
         image = Image.open(image_path)
-    return image
+    return image.convert('RGB')

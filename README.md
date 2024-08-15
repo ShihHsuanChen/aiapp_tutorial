@@ -50,6 +50,12 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
     $ python main.py [-h] [-v] [-k TOPK] [image_path]
     ```
 
+## Run API
+
+```
+$ uvicorn aiapp_tutorial.app:app
+```
+
 ## Test
 
 1. Install dependencies for testing
