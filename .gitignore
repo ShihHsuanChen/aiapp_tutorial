@@ -5,4 +5,5 @@
 models
 dist
 build
+*.spec
 .env
