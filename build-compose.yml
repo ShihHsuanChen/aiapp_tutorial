@@ -18,3 +18,26 @@ commands:
             additional-hooks-dir: hook_files
         positional:
             - main.py
+
+    build_deb: # debian only
+        executable: bash 
+        positional:
+            - build_deb.sh
+        environment:
+            Version: 0.0.1
+            AppName: Myaiapp
+            PackageName: myaiapp
+            AppExeName: Myaiapp
+            Description: "Doing image classification using MobileNet"
+            AppPublisher: ShihHsuanChen
+            AppUrl: "https://github.com/ShihHsuanChen/aiapp_tutorial"
+
+    build_installer: # windows only
+        executable: iscc
+        positional:
+            - build_installer.iss
+        environment:
+            AppId: 
+            AppName: Myaiapp
+            ProductName: Myaiapp
+            Description: "Doing image classification using MobileNet"

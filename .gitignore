@@ -4,6 +4,7 @@
 !test/data/*.png
 models
 dist
+dist_wizard
 build
 *.spec
 .env

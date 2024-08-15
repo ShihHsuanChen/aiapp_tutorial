@@ -111,3 +111,19 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
         ```
     
     The result will be created in `./dist/`
+
+3. Build installer
+
+    Create installer from bundle
+    
+    - Windows
+
+        ```
+        $ config2cmd build-compose.yml -r build_installer
+        ```
+
+    - Linux (Debian)
+
+        ```
+        $ config2cmd build-compose.yml -r build_deb
+        ```
