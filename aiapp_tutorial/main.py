@@ -5,7 +5,7 @@ from .configs import cfg
 
 #  fname = 'https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/beignets-task-guide.png'
 
-infer_model = load_model(cfg.infer_model_name)
+infer_model = load_model(cfg.infer_model_name_or_path)
 
 
 def inference(image_path: str, topk: int = 5):
