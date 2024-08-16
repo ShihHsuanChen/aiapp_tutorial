@@ -1,0 +1,31 @@
+From nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04
+
+ENV PYVERSION 3.8
+ENV LANG C.UTF-8
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt-get install -y apt-utils lsof tree vim \
+   net-tools htop curl wget ssh git git-lfs
+
+RUN apt-get install -y python${PYVERSION} && \
+   ln -s /usr/bin/python${PYVERSION} /usr/bin/python
+RUN /usr/bin/python --version
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN apt-get install -y python${PYVERSION}-distutils
+RUN python get-pip.py && rm get-pip.py
+RUN apt-get install -y python3-apt python${PYVERSION}-dev build-essential
+
+RUN pip install Cython urllib3 psutil certifi
+RUN pip install torch==2.2.1 torchvision==0.17.1 --index-url https://download.pytorch.org/whl/cu118
+
+COPY . /aiapp_tutorial
+WORKDIR /aiapp_tutorial
+
+RUN pip install -e .[api]
+
+
+
+EXPOSE 8000
+
+CMD ["uvicorn", "aiapp_tutorial.app:app", "--host=0.0.0.0", "--port=8000"]

@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+    aiapp_tutorial:
+        image: aiapp_tutorial:0.0.1
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 8000:8000
+        environment:
+            INFER_MODEL_NAME_OR_PATH: "mobilenetv4_conv_small.e2400_r224_in1k"
+        restart: unless-stopped
+
+    aiapp_tutorial_gpu:
+        image: aiapp_tutorial:0.0.1-gpu
+        build:
+            context: .
+            dockerfile: Dockerfile_gpu
+        ports:
+            - 8000:8000
+        environment:
+            INFER_MODEL_NAME_OR_PATH: "mobilenetv4_conv_small.e2400_r224_in1k"
+        restart: unless-stopped

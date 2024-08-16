@@ -8,3 +8,4 @@ dist_wizard
 build
 *.spec
 .env
+volume
