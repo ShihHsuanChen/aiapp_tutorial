@@ -133,3 +133,48 @@ $ uvicorn aiapp_tutorial.app:app
         ```
         $ config2cmd build-compose.yml -r build_deb
         ```
+
+## Docker
+
+### Build docker image
+
+- With GPU
+
+    ```
+    $ docker-compose build aiapp_tutorial_gpu
+    ```
+
+- CPU only
+
+    ```
+    $ docker-compose build aiapp_tutorial
+    ```
+
+### Run service in docker container
+
+- With GPU
+
+    ```
+    $ docker-compose up -d aiapp_tutorial_gpu
+    ```
+
+    NOTE: to enable GPU in container, you need to install `nvidia-docker`
+    and modify the `/etc/daemon.json`
+
+    ```json
+    {
+     "default-runtime": "nvidia",
+      "runtimes": {
+         "nvidia": {
+             "path": "/usr/bin/nvidia-container-runtime",
+             "runtimeArgs": []
+         }
+     }
+    }
+    ```
+
+- CPU only
+
+    ```
+    $ docker-compose up -d aiapp_tutorial
+    ```
