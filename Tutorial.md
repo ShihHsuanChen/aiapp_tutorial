@@ -32,3 +32,7 @@ This is a tutorial for building a simple AI inference application.
     - (optional) using `cmd_config` as the configuration tool for build
 
 7. (Optional) Pack build files using `Inno Setup Compiler` (Windows) or `deb` (Linux/debian, ubuntu)
+
+8. (Optional) Write a simple FastAPI project for this inference application
+
+9. (Optional) Build docker image and setup docker-compose of this FastAPI project.
