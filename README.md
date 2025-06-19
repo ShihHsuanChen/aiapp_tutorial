@@ -3,7 +3,7 @@
 Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
 
 ## Dependencies
-- `python==3.8`
+- `python==3.9`
 - `torch==2.2.1(+cu121)`
 - `torchvision==0.17.1(+cu121)`
 - `Pillow==10.2.0`
@@ -14,7 +14,9 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
 - `pydantic_config==0.3.0`
 - `python_dotenv==1.0.1`
 
-## Setup environment
+## Setup environment 
+
+### Using Anaconda
 
 1. Create a new environment (conda)
 
@@ -35,6 +37,35 @@ Doing image classification using `timm/mobilenetv4_conv_small.e2400_r224_in1k`
         ```
         $ pip install -e .
         ```
+
+### Using `UV`
+
+1. Create environment
+
+    ```
+    $ uv venv
+    ```
+
+2. Install dependencies
+
+    If you have Nvidia GPU and compatible to cuda-121, then run
+
+    ```
+    $ uv sync --extra cu121
+    ```
+
+    , otherwise run
+
+    ```
+    $ uv sync --extra cpu
+    ```
+
+    or
+
+    ```
+    $ uv pip install -e .[cpu]
+    ```
+
 
 ## Run
 
@@ -62,6 +93,12 @@ $ uvicorn aiapp_tutorial.app:app
 
     ```
     $ pip install -e .[test]
+    ```
+
+    or using `uv`
+
+    ```
+    $ uv pip install -e .[test]
     ```
 
 2. Update submodule
@@ -100,6 +137,12 @@ $ uvicorn aiapp_tutorial.app:app
     ```
     $ pip install setuptools-git-versioning==1.13.6
     $ pip install -e .[build]
+    ```
+
+    or using `uv`
+
+    ```
+    $ uv pip install -e .[build]
     ```
 
 2. Build

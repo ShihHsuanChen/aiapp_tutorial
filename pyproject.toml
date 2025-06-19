@@ -1,0 +1,77 @@
+[project]
+name = "aiapp-tutorial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "timm==1.0.7",
+  "setuptools-git-versioning==1.13.6",
+  "imagenet-stubs",
+  "pillow==10.2.0",
+  "pydantic==2.8.2",
+  "pydantic-config==0.3.0",
+  "python-dotenv==1.0.1",
+  "six>=1.17.0",
+  "cmd-config",
+]
+
+[project.optional-dependencies]
+cpu = [
+  "torch>=2.7.0",
+  "torchvision>=0.22.0",
+]
+cu121 = [
+  "torch==2.2.1",
+  "torchvision==0.17.1",
+]
+test = [
+  "pytest",
+]
+api = [
+  "uvicorn[standard]==0.30.6",
+  "python-multipart==0.0.9",
+  "fastapi==0.112.0",
+]
+build = [
+  "pyinstaller<6.0.0",
+  "cmd_config",
+]
+
+[project.scripts]
+myaiapp = "aiapp_tutorial.cli:cli"
+
+[build-system]
+requires = ["setuptools == 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+package = true
+conflicts = [
+    [
+        { extra = "cpu" },
+        { extra = "cu121" },
+    ]
+]
+
+[tool.uv.sources]
+imagenet-stubs = { git = "https://github.com/nottombrown/imagenet-stubs.git", rev = "master" }
+torch = [
+  { index = "pytorch-cpu", extra = "cpu" },
+  { index = "pytorch-cu121", extra = "cu121" },
+]
+torchvision = [
+  { index = "pytorch-cpu", extra = "cpu" },
+  { index = "pytorch-cu121", extra = "cu121" },
+]
+cmd-config = { git = "https://github.com/ShihHsuanChen/cmd_config.git", rev = "0.0.5" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
